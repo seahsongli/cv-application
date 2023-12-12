@@ -1,16 +1,26 @@
-const PracticalExperienceSection = () =>{
+const PracticalExperienceSection = ({onChange}) =>{
     return (
         <div className = "experience">
-        <label for = "school" name = "company"> Company: </label>
-        <input type = "text" name = "company"></input>
-        <label for = "position">Position Title:</label>
-        <input type = "text" name = "position"></input>
-        <label for = "startDate">Start date:</label>
-        <input type = "date" name = "startDate"></input>
-        <label for = "endDate">End Date:</label>
-        <input type = "date" name = "endDate"></input>
-        <label for = "description">Main Responsibilites:</label>
-        <textarea name = "description" rows = "4" cols = "50"></textarea>
+        <label> 
+          Company: 
+          <input type = "text" name ="company" onChange = {(e)=>onChange(e)}></input>
+        </label>
+        <label>
+          Position Title:
+          <input type = "text" name = "position" onChange = {(e)=>onChange(e)}></input>
+        </label>
+        <label>
+          Start date:
+          <input type = "date" name = "expStartDate" onChange = {(e)=>onChange(e)}></input>
+        </label>
+        <label>
+          End Date:
+          <input type = "date" name = "expEndDate" onChange = {(e)=>onChange(e)}></input>
+        </label>
+        <label>
+          Main Responsibilites:
+          <textarea rows = "4" cols = "50" name = "description" onChange = {(e)=>onChange(e)}></textarea>
+        </label>
         <button>Add</button>
       </div>
     )

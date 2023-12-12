@@ -1,21 +1,49 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Education from './components/Education'
 import GeneralInformation from './components/GeneralInfo'
 import PracticalExperience from './components/PracticalExperience'
 import InputForm from './components/Form/InputForm'
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [formdata, setFormData] = useState({
+    "name"  : "",
+    "email" : "",
+    "phoneNumber" : "",
+    "schoolName": "",
+    "degree" : "",
+    "startDate" : "",
+    "endDate" : "",
+    "company" : "",
+    "position" : "",
+    "expStartDate" : "",
+    "expEndDate" : "",
+    "description" : ""
+  })
+  const handleFormChange = (newFormData) =>{
+    setFormData(newFormData);
+  } 
   return (
     <>
-    <InputForm/>
+    <InputForm onChange = {handleFormChange}/>
     <div className = "display">
-    <GeneralInformation name ="test"  email = "test2" phoneNumber = "1234"/>
-    <Education schoolName="hoho" title = "Med school" startDate = "nil" endDate = "nil"/>
-    <PracticalExperience companyName = "dummy" positionTitle= "slave" startDate="nil" endDate = "nil" description= "testing"/>
+      <GeneralInformation 
+        name ={formdata.name} 
+        email = {formdata.email} 
+        phoneNumber = {formdata.phoneNumber}
+      />
+      <Education 
+        schoolName={formdata.schoolName} 
+        degree = {formdata.degree} 
+        startDate = {formdata.startDate} 
+        endDate = {formdata.endDate}
+      />
+      <PracticalExperience 
+        company = {formdata.company} 
+        positionTitle= {formdata.position} 
+        startDate={formdata.expStartDate} 
+        endDate = {formdata.expEndDate} 
+        description= {formdata.description}
+      />
     </div>
     </>
   )

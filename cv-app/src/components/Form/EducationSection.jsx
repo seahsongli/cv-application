@@ -1,14 +1,22 @@
-const EducationSection = () =>{
+const EducationSection = ({onChange}) =>{
     return (
         <div className = "education">
-            <label for = "school">School Name: </label>
-            <input type = "text" name = "school"></input>
-            <label for = "degree">Degree Name:</label>
-            <input type = "text" name = "degree"></input>
-            <label for = "startDate">Start date:</label>
-            <input type = "date" name = "startDate"></input>
-            <label for = "endDate">End Date:</label>
-            <input type = "date" name = "endDate"></input>
+            <label>
+                School Name: 
+                <input type = "text" name = "schoolName"onChange = {(e)=>onChange(e)}></input>
+            </label>
+            <label>
+                Degree Name:
+                <input type = "text" name = "degree" onChange = {(e)=>onChange(e)}></input>
+            </label>
+            <label>
+                Start date:
+                <input type = "date" name = "startDate" onChange = {(e)=>onChange(e)}></input>
+            </label>
+            <label>
+                End Date:
+                <input type = "date" name = "endDate" onChange = {(e)=>onChange(e)}></input>
+            </label>
       </div>
     )
 };
