@@ -25,7 +25,7 @@ const PracticalExperienceSection = ({onChange, experiences}) =>{
       }
       
     return (
-      <div className = "experience-info">
+      <div className = "experience-info" id = "form">
         <h1>Work Experience</h1>
         {experiences.map((experience, index) =>{
           return (
@@ -51,11 +51,11 @@ const PracticalExperienceSection = ({onChange, experiences}) =>{
                 Main Responsibilites:
                 <textarea rows = "4" cols = "50" name = "description" onChange = {(e)=>handleChange(e, index)}></textarea>
               </label>
-              <button onClick = {() => handleDeleteExperience(index)}>Delete</button> 
+              <button id = "delete" onClick = {() => handleDeleteExperience(index)}>Delete</button> 
             </div>
           )
         })}
-        <button onClick = {handleAddExperience}>Add</button>
+        <button id = "add"onClick = {handleAddExperience}>Add</button>
         
       </div>
     )

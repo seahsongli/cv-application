@@ -1,6 +1,6 @@
 const GeneralInformationSection = ({onChange})  =>{
     return (
-    <div className = "general-information">
+    <div className = "general-information" id = "form">
         <h1>Personal Information</h1>
         <label>
             Full Name: 

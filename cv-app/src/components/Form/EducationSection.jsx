@@ -1,6 +1,6 @@
 const EducationSection = ({onChange}) =>{
     return (
-        <div className = "education">
+        <div className = "education" id = "form">
             <h1>Education</h1>
             <label>
                 School Name: 
