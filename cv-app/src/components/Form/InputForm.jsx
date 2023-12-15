@@ -1,7 +1,7 @@
 import EducationSection from "./EducationSection";
 import GeneralInformationSection from "./GeneralInformationSection";
 import PracticalExperienceSection from "./PracticalExperienceSection";
-const InputForm = ({onChange, addExp, delExp, expChange, experiences}) =>{
+const InputForm = ({onChange, expChange, experiences}) =>{
   const handleChange = (e) => {
     const {name,value} = e.target;
     onChange((prevData) => {
@@ -15,7 +15,7 @@ const InputForm = ({onChange, addExp, delExp, expChange, experiences}) =>{
     <div className = "input-form">
       <GeneralInformationSection onChange = {handleChange}/> 
       <EducationSection onChange = {handleChange} />
-      <PracticalExperienceSection onChange = {expChange} addExp = {addExp} delExp = {delExp} experiences={experiences}/>
+      <PracticalExperienceSection onChange = {expChange} experiences={experiences}/>
     </div>
     )
 }

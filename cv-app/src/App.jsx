@@ -13,16 +13,8 @@ function App() {
     "degree" : "",
     "startDate" : "",
     "endDate" : "",
-    // "jobExperience" : {0 :{
-    //   "company" : "",
-    //   "position" : "",
-    //   "expStartDate" : "",
-    //   "expEndDate" : "",
-    //   "description" : ""
-    // }
-  // }
-  
   })
+
   const [experiences , setExperiences] = useState([{"company" : "",
   "position" : "",
   "expStartDate" : "",
@@ -33,40 +25,14 @@ function App() {
     setFormData(newFormData);
   } 
 
-  
-  // const handleAddExperience = (newE) => {
-  //   setExperiences([...experiences, {company: "",
-  //   position: "",
-  //   expStartDate: "",
-  //   expEndDate: "",
-  //   description: ""}]) // Add an empty experience to the list
-  // }
-  const handleAddExperience = (newExperiences) => {
-    setExperiences(newExperiences) 
-  }
-  const handleDeleteExperience = (newExperiences) => {
-    setExperiences(newExperiences)
-  };
-  // const handleExpChange = (e, index) =>{
-  //   const {name, value} = e.target;
-  //   console.log("Handling change:", e.target.name, e.target.value);
-  //   // If you change "company" at index 1, only that index gets changed.
-  //   setExperiences((newExperiences) => )
-  //   setExperiences((pastExperiences)=>{
-  //     const newExperiences = [...pastExperiences];
-  //     newExperiences[index] = {...newExperiences[index], [name] : value};
-  //     return newExperiences
-  //   })
-  const handleExpChange = (newExperiences) =>{
+  const handleExperienceChange = (newExperiences) =>{
     setExperiences(newExperiences)
   }
-    
-    // If you change "company" at index 1, only that index gets changed.
     
   return (
     
     <div className = "app">
-      <InputForm className = "form" onChange = {handleFormChange} addExp = {handleAddExperience} delExp = {handleDeleteExperience} expChange = {handleExpChange} experiences = {experiences}/>
+      <InputForm className = "form" onChange = {handleFormChange} expChange = {handleExperienceChange} experiences = {experiences}/>
       <div className = "form-container">
         <GeneralInformation 
           name ={formdata.name} 
@@ -86,6 +52,5 @@ function App() {
     </div>
   )
 }
-
 
 export default App

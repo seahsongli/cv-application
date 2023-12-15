@@ -1,34 +1,29 @@
 import { useState } from "react";
-const PracticalExperienceSection = ({onChange, addExp, delExp, experiences}) =>{
+const PracticalExperienceSection = ({onChange, experiences}) =>{
     const handleAddExperience = () => {
       const newExperiences = [...experiences, {company: "",
       position: "",
       expStartDate: "",
       expEndDate: "",
-      description: ""}]
-       // Add an empty experience to the list
-      addExp(newExperiences);
+      description: ""}]   // Add an empty experience to the list
+      onChange(newExperiences);
       return newExperiences
     }
     const handleDeleteExperience = (index) => {
       const newExperiences = [...experiences];
       newExperiences.splice(index, 1); // Remove the experience at the specified index
-      delExp(newExperiences);
+      onChange(newExperiences);
       return newExperiences;
     };
     const handleChange = (e, index) =>{
       const {name, value} = e.target;
-      console.log("Handling change:", e.target.name, e.target.value);
       // If you change "company" at index 1, only that index gets changed.
-      
         const newExperiences = [...experiences];
         newExperiences[index] = {...newExperiences[index], [name] : value};
         onChange(newExperiences);
         return newExperiences
       }
       
-      
-   
     return (
       <div className = "experience-info">
         <h1>Work Experience</h1>
@@ -56,7 +51,6 @@ const PracticalExperienceSection = ({onChange, addExp, delExp, experiences}) =>{
                 Main Responsibilites:
                 <textarea rows = "4" cols = "50" name = "description" onChange = {(e)=>handleChange(e, index)}></textarea>
               </label>
-              {/* <button onClick = {() => handleDeleteExperience(index)}>Delete</button> */}
               <button onClick = {() => handleDeleteExperience(index)}>Delete</button> 
             </div>
           )
